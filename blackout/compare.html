@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackout Comms vs Meshtastic — Altware Development</title>
+  <meta name="description" content="Design differences in interface, keys, mesh, and radio behavior.">
+  <link rel="icon" href="../assets/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,620&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;520;640&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../">
+        <img src="../assets/logo.webp" alt="Altware Development">
+        <div><span>Altware Development LLC</span><strong>Off-grid systems</strong></div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+      <nav class="nav"><a href="../blackout/" class="active">Blackout Comms</a><a href="../reviews/">Reviews</a><a href="../lvps/">LVPS</a><a href="../guides/">Guides</a><a href="../about/">About</a></nav>
+    </div>
+  </header>
+  <main>
+    
+<section class="wrap page-hero">
+  <p class="kicker">Different design goals</p>
+  <h1>Blackout Comms vs Meshtastic</h1>
+  <p>These are separate projects. Blackout Comms was built for a different interface, a different security model, and a different idea of what mesh should do.</p>
+  <div class="subnav"><a href="../blackout/">Overview</a><a href="../blackout/lora.html">LoRa</a><a href="../blackout/mesh.html">Mesh</a><a href="../blackout/security.html">Security</a><a href="../blackout/signatures.html">Signatures</a><a href="../blackout/onboarding.html">Onboarding</a><a href="../blackout/range.html">Range</a><a href="../blackout/compare.html" class="active">vs Meshtastic</a></div>
+</section>
+<section class="wrap section">
+  <ul class="list">
+    <li>Meant to be usable without knowing LoRa settings or encryption terminology.</li>
+    <li>Setup does not ask you to invent or type channel keys.</li>
+    <li>No app store and no phone in the path.</li>
+    <li>Asymmetric and symmetric encryption, ECDSA signatures, and frequency hopping are part of the protocol, not an optional extra.</li>
+  </ul>
+  <p>If you already have a T-Deck, LilyGO pager, or another compatible device, firmware is on the <a href="https://www.offgridcomms.club/firmware/esp32/">download page</a>.</p>
+  <table>
+    <thead><tr><th></th><th>Blackout Comms</th><th>Meshtastic</th></tr></thead>
+    <tbody>
+      <tr><td>Membership</td><td>In-person onboarding by a root device. Chain of trust.</td><td>Anyone with the channel password is in.</td></tr>
+      <tr><td>Keys</td><td>Generated on device. Private keys are not shown or exported.</td><td>One symmetric channel key, entered by a person, often on a phone.</td></tr>
+      <tr><td>Direct messages</td><td>Asymmetric. Relays cannot read them.</td><td>Primarily channel-level symmetric encryption.</td></tr>
+      <tr><td>Radio</td><td>Cluster hops. Direct packets stripe across frequencies.</td><td>Sits on one frequency.</td></tr>
+      <tr><td>Client</td><td>Embedded firmware. No phone OS.</td><td>Phone app is the usual interface.</td></tr>
+    </tbody>
+  </table>
+  <p>Shorter comparisons of interface, mesh behavior, and storage are folded into the security and mesh pages. Demos of mesh delivery, cluster setup, and location live on the <a href="https://www.youtube.com/playlist?list=PL5qypkxsXRoL4cWpx1WuSr6r7DMVAEyqf">mesh playlist</a>.</p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Altware Development LLC</strong>
+        <p>Privately held firmware and embedded systems work by Matt Calhoun. Blackout Comms is the off-grid mesh platform. ChatterBox is the device side of that work.</p>
+      </div>
+      <div>
+        <strong>On this site</strong>
+        <ul>
+          <li><a href="../blackout/">Blackout Comms</a></li>
+          <li><a href="../reviews/">Mesh product reviews</a></li>
+          <li><a href="../lvps/">Lightweight Visual Positioning</a></li>
+          <li><a href="../about/">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Elsewhere</strong>
+        <ul>
+          <li><a href="https://www.chatters.io/products">Buy a cluster</a></li>
+          <li><a href="https://www.chatters.io/hardware">Build plans</a></li>
+          <li><a href="https://www.offgridcomms.club/firmware/esp32/">Firmware</a></li>
+          <li><a href="https://github.com/mattcalhoun1">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/matt-calhoun-74572828/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>

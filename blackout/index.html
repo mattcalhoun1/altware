@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is Blackout Comms — Altware Development</title>
+  <meta name="description" content="Off-grid encrypted mesh firmware and protocol for private clusters.">
+  <link rel="icon" href="../assets/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,620&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;520;640&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../">
+        <img src="../assets/logo.webp" alt="Altware Development">
+        <div><span>Altware Development LLC</span><strong>Off-grid systems</strong></div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+      <nav class="nav"><a href="../blackout/" class="active">Blackout Comms</a><a href="../reviews/">Reviews</a><a href="../lvps/">LVPS</a><a href="../guides/">Guides</a><a href="../about/">About</a></nav>
+    </div>
+  </header>
+  <main>
+    
+<section class="wrap page-hero">
+  <p class="kicker">Protocol and firmware</p>
+  <h1>What is Blackout Comms</h1>
+  <p>An off-grid communication, location sharing, and circuit-control mesh. It is mostly LoRa, with MQTT and other transports available. The point is to talk to people around you when there is no cell service, no internet, or no grid at all.</p>
+  <div class="subnav"><a href="../blackout/" class="active">Overview</a><a href="../blackout/lora.html">LoRa</a><a href="../blackout/mesh.html">Mesh</a><a href="../blackout/security.html">Security</a><a href="../blackout/signatures.html">Signatures</a><a href="../blackout/onboarding.html">Onboarding</a><a href="../blackout/range.html">Range</a><a href="../blackout/compare.html">vs Meshtastic</a></div>
+</section>
+<section class="wrap section">
+  <div class="grid-2">
+    <div>
+      <ul class="list">
+        <li>Independent of cell, internet, and the power grid.</li>
+        <li>Local messaging, broadcasts, and location sharing with trusted people.</li>
+        <li>A decentralized mesh that plans paths and still keeps payloads private.</li>
+        <li>Out-of-range or powered-off devices can receive a message up to 24 hours later.</li>
+        <li>Encrypted and digitally signed: asymmetric and symmetric encryption, plus ECDSA.</li>
+        <li>Delivery confirmations when a message is actually received.</li>
+        <li>Unpredictable frequency hopping, and packet striping across frequencies.</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.chatters.io/products">Buy a ready cluster</a>
+        <a class="btn btn-ghost" href="https://www.chatters.io/hardware">DIY build plans</a>
+      </div>
+    </div>
+    <div class="frame"><img src="../assets/solar.webp" alt="Solar mesh node cluster"></div>
+  </div>
+  <h2>How it started</h2>
+  <p>Development of the protocol, firmware, and early hardware started in late 2023, after repeated and authoritative warnings about grid and communication outages. At the time there was no inexpensive, low-power, text-based system that a non-technical person could set up and actually rely on.</p>
+  <p>Some options checked one or two of those boxes. Below the surface, most were weak on security, usability, or both. Blackout Comms was written from scratch instead of patching those gaps.</p>
+  <h3>Early designs</h3>
+  <p>Firmware and hardware went through many iterations. Early prototypes used a SAMD51 and a custom PCB built around that platform with an RFM95W transceiver. The focus has since moved entirely to firmware, UI, and protocol. Hardware design is left to LilyGO, Heltec, and others.</p>
+  <h2>Where it is going</h2>
+  <p>Current work is on making the firmware easier for non-technical users, and on sensors and control that matter when the grid is unreliable: secure asynchronous communication, motion detection, and simple automation.</p>
+  <p>The main product site is <a href="https://chatters.io/">chatters.io</a>. Firmware, build PDFs, and platform docs live at <a href="https://www.offgridcomms.club/firmware/esp32/">offgridcomms.club</a>.</p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Altware Development LLC</strong>
+        <p>Privately held firmware and embedded systems work by Matt Calhoun. Blackout Comms is the off-grid mesh platform. ChatterBox is the device side of that work.</p>
+      </div>
+      <div>
+        <strong>On this site</strong>
+        <ul>
+          <li><a href="../blackout/">Blackout Comms</a></li>
+          <li><a href="../reviews/">Mesh product reviews</a></li>
+          <li><a href="../lvps/">Lightweight Visual Positioning</a></li>
+          <li><a href="../about/">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Elsewhere</strong>
+        <ul>
+          <li><a href="https://www.chatters.io/products">Buy a cluster</a></li>
+          <li><a href="https://www.chatters.io/hardware">Build plans</a></li>
+          <li><a href="https://www.offgridcomms.club/firmware/esp32/">Firmware</a></li>
+          <li><a href="https://github.com/mattcalhoun1">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/matt-calhoun-74572828/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>

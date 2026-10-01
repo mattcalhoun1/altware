@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security — Altware Development</title>
+  <meta name="description" content="Private clusters, encryption, hopping, and how that differs from a shared channel password.">
+  <link rel="icon" href="../assets/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,620&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;520;640&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../">
+        <img src="../assets/logo.webp" alt="Altware Development">
+        <div><span>Altware Development LLC</span><strong>Off-grid systems</strong></div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+      <nav class="nav"><a href="../blackout/" class="active">Blackout Comms</a><a href="../reviews/">Reviews</a><a href="../lvps/">LVPS</a><a href="../guides/">Guides</a><a href="../about/">About</a></nav>
+    </div>
+  </header>
+  <main>
+    
+<section class="wrap page-hero">
+  <p class="kicker">Private clusters and channels</p>
+  <h1>Security</h1>
+  <p>Blackout Comms has two models. Private clusters are the higher-security, higher-function path. Channels are the other, documented separately on the firmware site.</p>
+  <div class="subnav"><a href="../blackout/">Overview</a><a href="../blackout/lora.html">LoRa</a><a href="../blackout/mesh.html">Mesh</a><a href="../blackout/security.html" class="active">Security</a><a href="../blackout/signatures.html">Signatures</a><a href="../blackout/onboarding.html">Onboarding</a><a href="../blackout/range.html">Range</a><a href="../blackout/compare.html">vs Meshtastic</a></div>
+</section>
+<section class="wrap section">
+  <h2>Private clusters</h2>
+  <p>A cluster is two or more ChatterBox devices that trust each other and help with mesh delivery. They share a common root, the admin device, and each new device is onboarded once, in person and in proximity. Devices outside the cluster are ignored.</p>
+  <h3>Chain of trust</h3>
+  <p>Devices the root trusts become trusted by the rest of the cluster. The root stays at the top of that chain. Details are on the onboarding page.</p>
+  <h3>Frequency hopping</h3>
+  <p>The cluster rotates frequencies about once a minute in a pattern derived from a key. Off-cluster radios do not sit on the traffic, and a jammed frequency only matters for a short window. Direct exchanges stripe each packet onto a frequency derived from the asymmetric keys of those two devices.</p>
+  <h3>Encryption</h3>
+  <p>Every message, ping, location, and mesh packet is encrypted in transit. Direct messages use asymmetric encryption, so devices that only relay the packet cannot read it. Broadcasts and pings use symmetric encryption so every on-cluster device can decrypt them. Sensitive data at rest is symmetrically encrypted with a password you choose, or with a device-generated key if you do not.</p>
+  <h3>Signatures and storage</h3>
+  <p>Messages are signed with the sender’s private key using ECDSA. The signature travels with the message. Public keys move through the chain of trust, so every device can check the signature, including a timestamp, before it meshes the packet. Relays can validate a direct message without decrypting it.</p>
+  <p>With private clusters, symmetric and private keys are not shown and cannot be exported. If you use an SD card, sensitive data and configuration are encrypted at rest.</p>
+  <h3>No phone OS in the loop</h3>
+  <p>This is embedded firmware, on FreeRTOS or no OS. There is no mechanism for an operating system to inspect the data, disable an app, or share location with a vendor.</p>
+  <h2>How this differs from Meshtastic</h2>
+  <p>Meshtastic’s model is a single shared channel password. If you know it, you are in. There is no invite-only group and no chain of trust. That one symmetric key is typed by a person into a phone or device, so a phone OS and human eyes have seen it. If it leaks, the channel is compromised.</p>
+  <p>Meshtastic devices sit on one frequency. That raises the chance of collision and jamming, makes a long recording easier to replay later if the key leaks, and makes triangulation simpler. Blackout Comms hops, signs every packet, and keeps direct-message plaintext off the relays.</p>
+  <p>Meshtastic can use asymmetric encryption in some cases. The default channel model is still one shared symmetric key entered by hand.</p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Altware Development LLC</strong>
+        <p>Privately held firmware and embedded systems work by Matt Calhoun. Blackout Comms is the off-grid mesh platform. ChatterBox is the device side of that work.</p>
+      </div>
+      <div>
+        <strong>On this site</strong>
+        <ul>
+          <li><a href="../blackout/">Blackout Comms</a></li>
+          <li><a href="../reviews/">Mesh product reviews</a></li>
+          <li><a href="../lvps/">Lightweight Visual Positioning</a></li>
+          <li><a href="../about/">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Elsewhere</strong>
+        <ul>
+          <li><a href="https://www.chatters.io/products">Buy a cluster</a></li>
+          <li><a href="https://www.chatters.io/hardware">Build plans</a></li>
+          <li><a href="https://www.offgridcomms.club/firmware/esp32/">Firmware</a></li>
+          <li><a href="https://github.com/mattcalhoun1">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/matt-calhoun-74572828/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>

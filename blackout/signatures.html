@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital signatures — Altware Development</title>
+  <meta name="description" content="ECDSA signatures and signed delivery confirmations in Blackout Comms.">
+  <link rel="icon" href="../assets/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,620&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;520;640&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../">
+        <img src="../assets/logo.webp" alt="Altware Development">
+        <div><span>Altware Development LLC</span><strong>Off-grid systems</strong></div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+      <nav class="nav"><a href="../blackout/" class="active">Blackout Comms</a><a href="../reviews/">Reviews</a><a href="../lvps/">LVPS</a><a href="../guides/">Guides</a><a href="../about/">About</a></nav>
+    </div>
+  </header>
+  <main>
+    
+<section class="wrap page-hero">
+  <p class="kicker">ECDSA on every packet</p>
+  <h1>Digital signatures</h1>
+  <p>Every message, image, and command is signed with ECDSA, in the same family of idea as an Ethereum transaction. You cannot send an unsigned Blackout Comms message.</p>
+  <div class="subnav"><a href="../blackout/">Overview</a><a href="../blackout/lora.html">LoRa</a><a href="../blackout/mesh.html">Mesh</a><a href="../blackout/security.html">Security</a><a href="../blackout/signatures.html" class="active">Signatures</a><a href="../blackout/onboarding.html">Onboarding</a><a href="../blackout/range.html">Range</a><a href="../blackout/compare.html">vs Meshtastic</a></div>
+</section>
+<section class="wrap section narrow">
+  <p>The signed data covers sender, recipient, payload, send time, and metadata such as location. A relay cannot alter the body or the header and still have the signature check out. A fake or edited packet is dropped at the first device that sees it.</p>
+  <h2>Private cluster</h2>
+  <p>Messages are signed with the sender’s private key. Other devices already have, or can fetch, the matching public key, so the signature is checked at every hop. A relay can validate a direct message even though it cannot decrypt it.</p>
+  <h3>Signed delivery confirmations</h3>
+  <p>When a device validates a direct message meant for it, it signs a delivery confirmation and sends it back. The sender shows a checkmark only after that signed proof arrives. Green means a direct delivery. Blue means the message took at least two hops.</p>
+  <h2>Open channels</h2>
+  <p>Channels still hop, encrypt, and sign. They are “open” only in the sense that there is no constant pinging, no device cap, and joining takes the series of four channel passwords instead of an in-person root onboarding.</p>
+  <p>Broadcasts on a channel are signed and encrypted with the channel’s secret keys — four distinct symmetric keys. Any device on the channel checks the signature before it treats the message as valid or forwards it.</p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Altware Development LLC</strong>
+        <p>Privately held firmware and embedded systems work by Matt Calhoun. Blackout Comms is the off-grid mesh platform. ChatterBox is the device side of that work.</p>
+      </div>
+      <div>
+        <strong>On this site</strong>
+        <ul>
+          <li><a href="../blackout/">Blackout Comms</a></li>
+          <li><a href="../reviews/">Mesh product reviews</a></li>
+          <li><a href="../lvps/">Lightweight Visual Positioning</a></li>
+          <li><a href="../about/">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Elsewhere</strong>
+        <ul>
+          <li><a href="https://www.chatters.io/products">Buy a cluster</a></li>
+          <li><a href="https://www.chatters.io/hardware">Build plans</a></li>
+          <li><a href="https://www.offgridcomms.club/firmware/esp32/">Firmware</a></li>
+          <li><a href="https://github.com/mattcalhoun1">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/matt-calhoun-74572828/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>

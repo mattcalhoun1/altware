@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mesh range — Altware Development</title>
+  <meta name="description" content="Single-hop distance, mesh hops, and MQTT bridges.">
+  <link rel="icon" href="../assets/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,620&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;520;640&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../">
+        <img src="../assets/logo.webp" alt="Altware Development">
+        <div><span>Altware Development LLC</span><strong>Off-grid systems</strong></div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+      <nav class="nav"><a href="../blackout/" class="active">Blackout Comms</a><a href="../reviews/">Reviews</a><a href="../lvps/">LVPS</a><a href="../guides/">Guides</a><a href="../about/">About</a></nav>
+    </div>
+  </header>
+  <main>
+    
+<section class="wrap page-hero">
+  <p class="kicker">Distance</p>
+  <h1>How far a message can go</h1>
+  <p>Line of sight matters for a single hop. Mesh is what gets a message around obstacles, across longer distances, and across gaps in time.</p>
+  <div class="subnav"><a href="../blackout/">Overview</a><a href="../blackout/lora.html">LoRa</a><a href="../blackout/mesh.html">Mesh</a><a href="../blackout/security.html">Security</a><a href="../blackout/signatures.html">Signatures</a><a href="../blackout/onboarding.html">Onboarding</a><a href="../blackout/range.html" class="active">Range</a><a href="../blackout/compare.html">vs Meshtastic</a></div>
+</section>
+<section class="wrap section narrow">
+  <p>If you can see the other device, Blackout Comms can usually deliver directly. That is the easy case. Mesh is the interesting one: a packet can sit on any cluster device, including one in someone’s pocket, until a path opens. Early distance testing is in <a href="https://youtu.be/qL_igeGQ12M">this video</a>, shot on a very early prototype.</p>
+  <h2>Single hop, then up to 89 more</h2>
+  <p>Every hop still has to complete. A cluster can use up to 89 hops, and those hops are allowed up to 24 hours.</p>
+  <p>Direct, instant, one-hop deliveries with a signed confirmation have been made at 41 km, more than once, in flat Midwestern farmland. Neither device was on a mountain. A height advantage would do better. Results vary with device, antenna, amplifier, and terrain. Bench notes from that testing are in the reviews.</p>
+  <h2>Need more than radio range?</h2>
+  <p>An MQTT bridge on any compatible 2.4 GHz internet source — a phone hotspot, Starlink, or similar — is just another hop available to the cluster. To the protocol, it is not a special case.</p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Altware Development LLC</strong>
+        <p>Privately held firmware and embedded systems work by Matt Calhoun. Blackout Comms is the off-grid mesh platform. ChatterBox is the device side of that work.</p>
+      </div>
+      <div>
+        <strong>On this site</strong>
+        <ul>
+          <li><a href="../blackout/">Blackout Comms</a></li>
+          <li><a href="../reviews/">Mesh product reviews</a></li>
+          <li><a href="../lvps/">Lightweight Visual Positioning</a></li>
+          <li><a href="../about/">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Elsewhere</strong>
+        <ul>
+          <li><a href="https://www.chatters.io/products">Buy a cluster</a></li>
+          <li><a href="https://www.chatters.io/hardware">Build plans</a></li>
+          <li><a href="https://www.offgridcomms.club/firmware/esp32/">Firmware</a></li>
+          <li><a href="https://github.com/mattcalhoun1">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/matt-calhoun-74572828/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>

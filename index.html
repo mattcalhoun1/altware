@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Altware Development LLC — Blackout Comms</title>
+  <meta name="description" content="Secure off-grid text, location, and control from Altware Development LLC.">
+  <link rel="icon" href="assets/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,620&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;520;640&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./">
+        <img src="assets/logo.webp" alt="Altware Development">
+        <div><span>Altware Development LLC</span><strong>Off-grid systems</strong></div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+      <nav class="nav"><a href="blackout/">Blackout Comms</a><a href="reviews/">Reviews</a><a href="lvps/">LVPS</a><a href="guides/">Guides</a><a href="about/">About</a></nav>
+    </div>
+  </header>
+  <main>
+    
+<section class="wrap hero">
+  <div>
+    <p class="kicker">Secure off-grid text, location, and control</p>
+    <h1>Stay in contact when the grid is not.</h1>
+    <p class="lede">Blackout Comms is a secure off-grid communication protocol and an array of easily built devices. It keeps you in contact with trusted people — your private cluster — even in a complete grid outage.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://www.chatters.io/products">Buy a cluster</a>
+      <a class="btn btn-ghost" href="https://www.chatters.io/hardware">Build devices</a>
+      <a class="btn btn-ghost" href="https://www.offgridcomms.club/firmware/esp32/">Get firmware</a>
+    </div>
+    <div class="meta-row">
+      <span class="pill">LoRa + MQTT</span>
+      <span class="pill">Asymmetric encryption</span>
+      <span class="pill">ECDSA signatures</span>
+      <span class="pill">Frequency hopping</span>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="assets/devices.webp" alt="Blackout Comms handheld devices">
+  </div>
+</section>
+<section class="wrap section">
+  <div class="grid-3">
+    <article class="card">
+      <p class="tag">Private cluster</p>
+      <h3>Trusted people only</h3>
+      <p>Devices are onboarded in person by a root device. Keys are generated on the hardware. You never type a channel password into a phone.</p>
+    </article>
+    <article class="card">
+      <p class="tag">Async, like texting</p>
+      <h3>Delivery can wait</h3>
+      <p>If the other device is off or out of range, the mesh holds the packet and keeps trying for up to 24 hours. You get a signed delivery confirmation when it lands.</p>
+    </article>
+    <article class="card">
+      <p class="tag">No phone required</p>
+      <h3>Firmware, not an app</h3>
+      <p>Blackout Comms runs as embedded firmware on FreeRTOS or no OS. There is no app store, no phone OS, and no background leak of position to a platform.</p>
+    </article>
+  </div>
+</section>
+<section class="wrap section split">
+  <div>
+    <p class="kicker">Start here</p>
+    <h2>Firmware, docs, and a ready-made cluster.</h2>
+    <p>The protocol is independent of any one radio. LoRa on the 902–928 MHz ISM band is the primary path in the US. MQTT over Wi-Fi is optional, for bridging long distances when some internet still exists.</p>
+    <div class="actions">
+      <a class="btn btn-ghost" href="blackout/">What is Blackout Comms</a>
+      <a class="btn btn-ghost" href="https://www.offgridcomms.club/firmware/esp32/docs/Using_Blackout_Comms.pdf">User guide</a>
+      <a class="btn btn-ghost" href="https://www.youtube.com/playlist?list=PL5qypkxsXRoL4cWpx1WuSr6r7DMVAEyqf">Mesh playlist</a>
+    </div>
+  </div>
+  <div class="frame"><img src="assets/screens.webp" alt="Blackout Comms device screens"></div>
+</section>
+<section class="wrap section">
+  <div class="grid-2">
+    <article class="card">
+      <p class="tag">Hands-on</p>
+      <h3>Mesh product reviews</h3>
+      <p>Notes on LoRa antennas, amplifiers, and devices from Rokland, LilyGO, Heltec, and others. Written from the same bench that builds Blackout Comms firmware.</p>
+      <p><a href="reviews/">Browse the bench notes</a></p>
+    </article>
+    <article class="card">
+      <p class="tag">Separate project</p>
+      <h3>Lightweight Visual Positioning</h3>
+      <p>An experimental positioning system that uses vision and known landmarks instead of GPS. Built for resource-constrained machines, including small autonomous vehicles.</p>
+      <p><a href="lvps/">Read the LVPS overview</a></p>
+    </article>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Altware Development LLC</strong>
+        <p>Privately held firmware and embedded systems work by Matt Calhoun. Blackout Comms is the off-grid mesh platform. ChatterBox is the device side of that work.</p>
+      </div>
+      <div>
+        <strong>On this site</strong>
+        <ul>
+          <li><a href="blackout/">Blackout Comms</a></li>
+          <li><a href="reviews/">Mesh product reviews</a></li>
+          <li><a href="lvps/">Lightweight Visual Positioning</a></li>
+          <li><a href="about/">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Elsewhere</strong>
+        <ul>
+          <li><a href="https://www.chatters.io/products">Buy a cluster</a></li>
+          <li><a href="https://www.chatters.io/hardware">Build plans</a></li>
+          <li><a href="https://www.offgridcomms.club/firmware/esp32/">Firmware</a></li>
+          <li><a href="https://github.com/mattcalhoun1">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/matt-calhoun-74572828/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build an encrypted off-grid mesh texting device — Altware Development</title>
+  <meta name="description" content="A static rewrite of the May 2025 build note.">
+  <link rel="icon" href="../assets/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,620&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;520;640&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../">
+        <img src="../assets/logo.webp" alt="Altware Development">
+        <div><span>Altware Development LLC</span><strong>Off-grid systems</strong></div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+      <nav class="nav"><a href="../blackout/">Blackout Comms</a><a href="../reviews/">Reviews</a><a href="../lvps/">LVPS</a><a href="../guides/" class="active">Guides</a><a href="../about/">About</a></nav>
+    </div>
+  </header>
+  <main>
+    
+<section class="wrap page-hero">
+  <p class="kicker">27 May 2025 · Matt Calhoun</p>
+  <h1>Build an encrypted off-grid mesh texting device</h1>
+  <p>Everyone looks one text away until the network they depend on is not there. Blackout Comms is firmware, and a set of DIY devices, for texting the people nearby when that happens.</p>
+</section>
+<section class="wrap section narrow">
+  <h2>What the firmware guarantees</h2>
+  <ul class="list">
+    <li>Messages, locations, and other sensitive data are encrypted on the device and again in transit.</li>
+    <li>Messages, locations, and pings are digitally signed, so they cannot be forged.</li>
+    <li>Direct messages use asymmetric encryption. A trusted device that only relays the packet cannot read it. Only the recipient can.</li>
+    <li>Frequency hopping is unpredictable, which limits jamming and keeps neighboring groups from sitting on each other.</li>
+  </ul>
+  <h2>It behaves like texting</h2>
+  <p>Pick a person, type, send. If they are in LoRa range, delivery is immediate and the confirmation comes back in seconds. If they are out of range or powered off, the cluster plans a path and keeps pushing the message until it is delivered or it expires.</p>
+  <h2>Build or buy</h2>
+  <p>With a 3D printer, basic electrical work, and a soldering iron, the DIY devices are not a large project. Firmware is free on the <a href="https://www.offgridcomms.club/firmware/esp32/">download page</a>. Build plans for communicators and nodes are on <a href="https://www.chatters.io/hardware">chatters.io/hardware</a>.</p>
+  <p>If you would rather not assemble it, a cluster can be built and configured to order: device count, names, and capabilities. It arrives ready to turn on. That is <a href="https://www.chatters.io/products">chatters.io/products</a>.</p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Altware Development LLC</strong>
+        <p>Privately held firmware and embedded systems work by Matt Calhoun. Blackout Comms is the off-grid mesh platform. ChatterBox is the device side of that work.</p>
+      </div>
+      <div>
+        <strong>On this site</strong>
+        <ul>
+          <li><a href="../blackout/">Blackout Comms</a></li>
+          <li><a href="../reviews/">Mesh product reviews</a></li>
+          <li><a href="../lvps/">Lightweight Visual Positioning</a></li>
+          <li><a href="../about/">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Elsewhere</strong>
+        <ul>
+          <li><a href="https://www.chatters.io/products">Buy a cluster</a></li>
+          <li><a href="https://www.chatters.io/hardware">Build plans</a></li>
+          <li><a href="https://www.offgridcomms.club/firmware/esp32/">Firmware</a></li>
+          <li><a href="https://github.com/mattcalhoun1">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/matt-calhoun-74572828/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>

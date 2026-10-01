@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoRa and MQTT — Altware Development</title>
+  <meta name="description" content="How Blackout Comms uses LoRa, ISM bands, frequency hopping, and MQTT.">
+  <link rel="icon" href="../assets/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,620&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;520;640&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../">
+        <img src="../assets/logo.webp" alt="Altware Development">
+        <div><span>Altware Development LLC</span><strong>Off-grid systems</strong></div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+      <nav class="nav"><a href="../blackout/" class="active">Blackout Comms</a><a href="../reviews/">Reviews</a><a href="../lvps/">LVPS</a><a href="../guides/">Guides</a><a href="../about/">About</a></nav>
+    </div>
+  </header>
+  <main>
+    
+<section class="wrap page-hero">
+  <p class="kicker">Transports</p>
+  <h1>LoRa, ISM bands, and MQTT</h1>
+  <p>The protocol is built for any path that can move bytes, including unreliable ones. Delivery, retries, signatures, encryption, and route choice sit on each device.</p>
+  <div class="subnav"><a href="../blackout/">Overview</a><a href="../blackout/lora.html" class="active">LoRa</a><a href="../blackout/mesh.html">Mesh</a><a href="../blackout/security.html">Security</a><a href="../blackout/signatures.html">Signatures</a><a href="../blackout/onboarding.html">Onboarding</a><a href="../blackout/range.html">Range</a><a href="../blackout/compare.html">vs Meshtastic</a></div>
+</section>
+<section class="wrap section narrow">
+  <h2>Protocol agnostic, fault tolerant</h2>
+  <p>Blackout Comms does not assume a reliable link or any security from the radio itself. Each device validates signatures and payloads, encrypts and decrypts, retries, and decides which method and path to use. That holds whether a cluster has 2 devices or 90.</p>
+  <h2>LoRa and the ISM bands</h2>
+  <p>LoRa is a long-range, spread-spectrum modulation from Semtech. It is a practical fit here: low power, low cost, and a wide selection of modules, antennas, and amplifiers. It is an open standard, and many vendors ship hardware for it.</p>
+  <p>ISM means industrial, scientific, and medical. In the US the relevant unlicensed range is 902–928 MHz, along with the more familiar 2.4 and 5.8 GHz bands, provided the equipment stays inside FCC limits. Other countries use different ranges. ChatterBox primarily uses 902–928 MHz and can also use 863–870 MHz.</p>
+  <h2>Frequency hopping</h2>
+  <p>Whatever range is in use, the cluster hops. Devices move together to a short-lived base frequency chosen by a key-dependent algorithm. That cuts collisions between clusters and limits how long jamming on one frequency can matter.</p>
+  <p>On a direct exchange, the first packet uses the rotating base frequency. The rest are striped across frequencies known only to those two devices, typically within milliseconds.</p>
+  <h2>MQTT and Wi-Fi</h2>
+  <p>MQTT is the secondary path: low overhead, no delivery guarantee, and a good fit for constrained devices. It runs over 2.4 GHz Wi-Fi, which is a very different medium from LoRa, so it widens the platform without giving up the decentralized security model. TLS is possible, but it costs memory, so it is a choice rather than a requirement.</p>
+  <p>MQTT is optional. When it is available — a phone hotspot, Starlink, or any other 2.4 GHz internet source — it is just another hop, and it can bridge distances LoRa cannot.</p>
+  <h2>Other methods</h2>
+  <p>UDP multicast over Wi-Fi has been tested and works. It is currently disabled in the firmware because extra transports make the system harder to understand. UDP needs more networking setup than MQTT and has no server in the middle.</p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Altware Development LLC</strong>
+        <p>Privately held firmware and embedded systems work by Matt Calhoun. Blackout Comms is the off-grid mesh platform. ChatterBox is the device side of that work.</p>
+      </div>
+      <div>
+        <strong>On this site</strong>
+        <ul>
+          <li><a href="../blackout/">Blackout Comms</a></li>
+          <li><a href="../reviews/">Mesh product reviews</a></li>
+          <li><a href="../lvps/">Lightweight Visual Positioning</a></li>
+          <li><a href="../about/">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Elsewhere</strong>
+        <ul>
+          <li><a href="https://www.chatters.io/products">Buy a cluster</a></li>
+          <li><a href="https://www.chatters.io/hardware">Build plans</a></li>
+          <li><a href="https://www.offgridcomms.club/firmware/esp32/">Firmware</a></li>
+          <li><a href="https://github.com/mattcalhoun1">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/matt-calhoun-74572828/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>

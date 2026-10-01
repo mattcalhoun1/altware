@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Communicate in a grid outage — Altware Development</title>
+  <meta name="description" content="A static rewrite of the March 2025 outage note.">
+  <link rel="icon" href="../assets/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,620&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;520;640&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../">
+        <img src="../assets/logo.webp" alt="Altware Development">
+        <div><span>Altware Development LLC</span><strong>Off-grid systems</strong></div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">Menu</button>
+      <nav class="nav"><a href="../blackout/">Blackout Comms</a><a href="../reviews/">Reviews</a><a href="../lvps/">LVPS</a><a href="../guides/" class="active">Guides</a><a href="../about/">About</a></nav>
+    </div>
+  </header>
+  <main>
+    
+<section class="wrap page-hero">
+  <p class="kicker">22 March 2025 · Matt Calhoun</p>
+  <h1>Communicate in a grid outage, securely</h1>
+  <p>Blackout Comms is specialized firmware for exactly this case: text, location, and simple control with no grid services.</p>
+</section>
+<section class="wrap section narrow">
+  <p>The design goal is a path that is hard to intercept, interfere with, or fake. That comes from asymmetric encryption on direct messages, digital signatures, and frequency hopping that is not a fixed channel.</p>
+  <ul class="list">
+    <li>Direct messages use public/private key encryption. Relays that help delivery cannot decrypt them. Symmetric encryption is used where a whole cluster must read the packet, such as a broadcast.</li>
+    <li>ECDSA signatures cover transmissions. Other cluster devices check the signature before they process or mesh the packet.</li>
+    <li>The cluster does not sit on one frequency. It hops across as many as 64 frequencies in a non-repeating pattern unique to that cluster.</li>
+  </ul>
+  <p>There is no service plan, no phone app, and no radio license if you stay inside the transmit limits for the ISM band you are using. Range is a function of how many devices you place, where they sit, and which antennas or amplifiers you use.</p>
+  <p>Remote control over the same mesh — circuits, sensors, simple automation — is part of the platform and still expanding. A fuller feature list is on <a href="https://chatters.io/">chatters.io</a>.</p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Altware Development LLC</strong>
+        <p>Privately held firmware and embedded systems work by Matt Calhoun. Blackout Comms is the off-grid mesh platform. ChatterBox is the device side of that work.</p>
+      </div>
+      <div>
+        <strong>On this site</strong>
+        <ul>
+          <li><a href="../blackout/">Blackout Comms</a></li>
+          <li><a href="../reviews/">Mesh product reviews</a></li>
+          <li><a href="../lvps/">Lightweight Visual Positioning</a></li>
+          <li><a href="../about/">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Elsewhere</strong>
+        <ul>
+          <li><a href="https://www.chatters.io/products">Buy a cluster</a></li>
+          <li><a href="https://www.chatters.io/hardware">Build plans</a></li>
+          <li><a href="https://www.offgridcomms.club/firmware/esp32/">Firmware</a></li>
+          <li><a href="https://github.com/mattcalhoun1">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/matt-calhoun-74572828/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>
